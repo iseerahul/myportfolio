@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rahul Yadav | AI Product Manager</title>
+<meta name="description" content="Rahul Yadav builds AI voice products for India. Product Management intern at Square Yards, first-author IEEE researcher, founder of Bambai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat:wght@500;700&family=Courier+Prime:wght@400;700&family=Noto+Sans+Devanagari:wght@700&family=Noto+Sans+Tamil:wght@700&family=Noto+Sans+Telugu:wght@700&family=Noto+Sans+Bengali:wght@700&family=Noto+Sans+Kannada:wght@700&family=Noto+Sans+Gujarati:wght@700&family=Noto+Sans+Malayalam:wght@700&family=Noto+Sans+Gurmukhi:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FBF6EA;
+  --grid:rgba(27,58,158,.07);
+  --ink:#16181D;
+  --muted:#4B4F5A;
+  --brand:#1B3A9E;
+  --taxi:#FFC727;
+  --paper:#FFFDF6;
+  --panel:#F1ECDD;
+  --edge:#16181D;
+  --on-paper:#16181D;
+  --muted-paper:#4B4F5A;
+  --link:#1B3A9E;
+  --sans:"Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --hand:"Caveat", "Segoe Print", "Bradley Hand", cursive;
+  --type:"Courier Prime", "Courier New", monospace;
+  --indic:"Noto Sans Devanagari","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Bengali","Noto Sans Kannada","Noto Sans Gujarati","Noto Sans Malayalam","Noto Sans Gurmukhi", var(--sans);
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12151C; --grid:rgba(255,199,39,.06); --ink:#EDE9DD; --muted:#B4B0A4; --brand:#9DB4FF;
+    --panel:#1C2130; --edge:#05060A; --link:#9DB4FF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12151C; --grid:rgba(255,199,39,.06); --ink:#EDE9DD; --muted:#B4B0A4; --brand:#9DB4FF;
+  --panel:#1C2130; --edge:#05060A; --link:#9DB4FF; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-padding-top:calc(env(safe-area-inset-top, 0px) + 24px)}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;
+  background-color:var(--ground);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--link);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--taxi);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
+.hand{font-family:var(--hand)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border:2px solid var(--edge);border-radius:12px;background:var(--paper);color:var(--on-paper);font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--edge);transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--edge)}
+.btn.y{background:var(--taxi)}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 0}
+.logo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.logo{overflow:hidden;width:58px;height:58px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.05rem;text-decoration:none;border:2px solid var(--edge);box-shadow:3px 3px 0 var(--edge)}
+:root[data-theme="dark"] .logo{color:#12151C}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo{color:#12151C}}
+.top nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+
+/* hero */
+.hero{position:relative;padding:10px 0 40px}
+.name{font-weight:900;font-variation-settings:"wdth" 118;font-size:clamp(4.4rem,16.5vw,15.5rem);line-height:.8;letter-spacing:-.04em;color:var(--brand);text-align:center;margin:30px 0 0;position:relative;z-index:1}
+.tape{position:absolute;z-index:3;background:var(--taxi);color:#16181D;font-family:var(--hand);font-weight:700;font-size:1.5rem;padding:2px 18px;transform:rotate(-3deg);box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.tape.hi{left:50%;top:-6px;transform:translateX(-10%) rotate(-3deg)}
+.stage{display:grid;grid-template-columns:1fr minmax(300px,380px) 1fr;gap:28px;align-items:center;margin-top:-10px;position:relative;z-index:2}
+.subtitle{display:block;text-align:right;margin:10px 4% 0 0;font-family:var(--hand);font-size:clamp(1.4rem,2.2vw,1.9rem);color:var(--muted);transform:rotate(-2deg)}
+
+/* receipt */
+.receipt{justify-self:end;width:min(300px,100%);background:var(--paper);color:var(--on-paper);font-family:var(--type);font-size:.92rem;line-height:1.45;padding:22px 20px 26px;transform:rotate(-5deg);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  -webkit-mask:radial-gradient(8px at 50% 100%,#0000 98%,#000) 50% 100%/16px 100% repeat-x;mask:radial-gradient(8px at 50% calc(100% + 2px),#0000 98%,#000) 50% 0/16px 100% repeat-x}
+.receipt h3{font-family:var(--type);text-align:center;margin:0 0 4px;font-size:1rem}
+.receipt .c{text-align:center;margin:0 0 10px;color:var(--muted-paper)}
+.receipt .row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #b8b2a2;padding:5px 0}
+.receipt .row b{white-space:nowrap}
+.receipt .tot{margin-top:10px;font-weight:700;text-align:center}
+
+/* phone */
+.phone-wrap{position:relative}
+.splash{position:absolute;inset:-14% -22%;z-index:0;color:var(--taxi)}
+.phone{position:relative;z-index:1;background:#16181D;color:#F4F1E6;border:2px solid var(--edge);border-radius:40px;padding:16px;box-shadow:8px 8px 0 var(--edge);transform:rotate(2deg)}
+.screen{background:#1F2533;border-radius:28px;padding:26px 20px 20px;min-height:440px;display:flex;flex-direction:column}
+.notch{width:90px;height:22px;background:#16181D;border-radius:0 0 14px 14px;margin:-26px auto 18px}
+.callhead{display:flex;justify-content:space-between;font-size:.9rem;color:#C9C5B8}
+.live{display:inline-flex;align-items:center;gap:8px}
+.live i{width:9px;height:9px;border-radius:50%;background:#3DDC84}
+.greet{font-family:var(--indic);font-weight:700;font-size:clamp(2.4rem,4.6vw,3.2rem);line-height:1.25;margin:26px 0 0;min-height:1.3em;color:#fff}
+.greet-sub{margin:0 0 14px;color:#C9C5B8;min-height:1.6em}
+.wave{display:flex;align-items:center;gap:4px;height:64px;margin:4px 0 18px}
+.wave span{flex:1;background:var(--taxi);border-radius:3px;height:100%;transform:scaleY(.15);animation:talk 1s ease-in-out infinite alternate}
+.paused .wave span{animation-play-state:paused}
+@keyframes talk{to{transform:scaleY(var(--h,.8))}}
+@media (prefers-reduced-motion: reduce){.wave span{animation:none;transform:scaleY(var(--h,.5))}}
+.langs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.langs button{font:inherit;font-size:.82rem;color:#F4F1E6;background:transparent;border:1px solid rgba(244,241,230,.35);border-radius:999px;padding:6px 11px;min-height:36px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--taxi);color:#16181D;border-color:var(--taxi);font-weight:700}
+.callfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.84rem;color:#C9C5B8}
+.callfoot p{margin:0}
+.pause{font:inherit;font-size:.85rem;background:#E5484D;color:#fff;border:0;border-radius:999px;min-width:44px;min-height:44px;padding:0 14px;cursor:pointer;font-weight:700;flex:none}
+
+/* sticky */
+.sticky{justify-self:start;width:min(260px,100%);background:#FFE58A;color:#16181D;font-family:var(--hand);font-size:1.55rem;line-height:1.25;padding:26px 22px 30px;transform:rotate(4deg);box-shadow:0 12px 22px rgba(0,0,0,.14)}
+.sticky p{margin:0 0 6px}
+.sticky ul{margin:0;padding:0;list-style:none}
+.sticky li::before{content:"– "}
+
+/* section heads */
+.sec{padding:clamp(60px,9vw,110px) 0 0}
+.sec h2{font-weight:900;font-variation-settings:"wdth" 112;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em;line-height:1;margin:0 0 10px;color:var(--brand)}
+.sec .lead{margin:0 0 30px;color:var(--muted);max-width:42em}
+.sec .lead .hand{font-size:1.5rem}
+
+/* experience panel */
+.panel{background:var(--panel);border-radius:32px;padding:clamp(18px,3vw,34px);display:grid;grid-template-columns:220px 1fr 300px;gap:24px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:10px}
+.tabs button{font:inherit;text-align:left;display:flex;align-items:center;gap:10px;min-height:52px;padding:8px 12px;border:2px solid transparent;border-radius:14px;background:var(--paper);color:var(--on-paper);font-weight:700;font-size:.95rem;cursor:pointer;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.tabs button[aria-selected="true"]{border-color:var(--edge);box-shadow:3px 3px 0 var(--edge)}
+.mark{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:.8rem;color:#fff;flex:none}
+.card{background:var(--paper);color:var(--on-paper);border:2px solid var(--edge);border-radius:22px;padding:clamp(20px,3vw,30px);box-shadow:6px 6px 0 var(--edge)}
+.card header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.card h3{margin:0;font-size:1.5rem;font-weight:800;line-height:1.15}
+.card .role{margin:2px 0 0;color:var(--muted-paper);font-weight:600}
+.card .where{color:var(--muted-paper);font-size:.95rem}
+.card .when{display:inline-block;margin:14px 0 6px;font-weight:800;font-size:.9rem;color:var(--brand)}
+:root[data-theme="dark"] .card .when{color:#1B3A9E}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .card .when{color:#1B3A9E}}
+.card .ctx{font-style:italic;color:var(--muted-paper);margin:0 0 10px}
+.card ul{margin:0;padding-left:20px}
+.card li{margin:0 0 8px}
+.card b{background:linear-gradient(transparent 60%,#FFE07A 60%);font-weight:800}
+.stickers{position:relative;min-height:360px}
+.stk{position:absolute;width:190px;background:var(--paper);color:var(--on-paper);border:2px solid var(--edge);padding:16px 14px 14px;text-align:center;box-shadow:5px 5px 0 var(--edge)}
+.stk strong{display:block;font-weight:900;font-size:2.2rem;line-height:1;color:#1B3A9E;letter-spacing:-.03em}
+.stk span{display:block;font-size:.9rem;margin-top:6px;color:var(--muted-paper);line-height:1.35}
+.stk:nth-child(1){top:0;left:10px;transform:rotate(-6deg)}
+.stk:nth-child(2){top:120px;right:0;transform:rotate(5deg);background:#FFE58A}
+.stk:nth-child(3){top:240px;left:24px;transform:rotate(-2deg)}
+.stk::before{content:"";position:absolute;top:-12px;left:50%;width:70px;height:22px;transform:translateX(-50%) rotate(-4deg);background:rgba(255,199,39,.75)}
+
+/* impact */
+.impact{display:flex;flex-direction:column;gap:56px;margin-top:10px}
+.imp{position:relative;display:grid;grid-template-columns:42% 1fr;background:var(--paper);color:var(--on-paper);border:2px solid var(--edge);box-shadow:10px 10px 0 var(--edge);overflow:visible}
+.imp:nth-child(odd){transform:rotate(-.8deg)}
+.imp:nth-child(even){transform:rotate(.8deg)}
+.imp .art{background-color:var(--c2);background-image:radial-gradient(rgba(0,0,0,.14) 1px,transparent 1.5px);background-size:14px 14px;border-right:2px solid var(--edge);display:grid;place-items:center;padding:30px 20px;min-height:300px}
+.imp .washi{position:absolute;top:-14px;left:-10px;width:92px;height:26px;background:var(--c1);opacity:.9;transform:rotate(-8deg)}
+.imp .body{padding:clamp(22px,3vw,34px) clamp(22px,3vw,34px) 34px;position:relative;overflow:hidden}
+.imp h3{margin:0 0 10px;font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:800;line-height:1.2;padding-right:20px}
+.imp p{margin:0 0 14px;color:var(--muted-paper)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px;padding:0;list-style:none}
+.tags li{font-size:.8rem;font-weight:700;border:1.5px solid var(--edge);padding:3px 10px;background:#fff;color:#16181D}
+.imp details{position:relative;z-index:1;max-width:calc(100% - 120px)}
+.imp summary{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 16px;border:2px solid var(--edge);background:#fff;color:#16181D;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 var(--edge);list-style:none;margin-top:8px}
+.imp summary::-webkit-details-marker{display:none}
+.imp details[open] summary{box-shadow:1px 1px 0 var(--edge);transform:translate(3px,3px)}
+.imp .story{margin-top:16px}
+.imp .story p{margin:0 0 10px;color:var(--on-paper)}
+.imp .story p b{font-weight:800}
+.badge{position:absolute;right:-26px;bottom:-26px;width:150px;height:150px;border-radius:50%;background:var(--c1);display:grid;place-items:center;padding:0 40px 30px 0;color:#fff;font-weight:900;font-size:1.9rem;letter-spacing:-.03em;line-height:1;text-align:center}
+.badge.dark{color:#16181D}
+.badge.sm{font-size:1.3rem}
+.oldphone{width:min(220px,80%);height:auto;filter:drop-shadow(5px 5px 0 #16181D)}
+
+/* more work */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mini{background:var(--paper);color:var(--on-paper);border:2px solid var(--edge);border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 var(--edge);display:flex;flex-direction:column}
+.mini .pic{height:150px;border-bottom:2px solid var(--edge);display:grid;place-items:center}
+.mini .txt{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.mini h3{margin:0;font-size:1.05rem;line-height:1.25;font-weight:800}
+.mini p{margin:0;font-size:.95rem;color:var(--muted-paper)}
+.mini a{margin-top:auto;font-weight:700;padding-top:8px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.about .card p{margin:0 0 12px}
+.facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px}
+.facts dt{color:var(--muted-paper);font-weight:600}
+.facts dd{margin:0;font-weight:700}
+
+/* footer */
+footer{margin-top:clamp(70px,10vw,120px);position:relative;background:var(--panel)}
+footer .waves{position:absolute;top:-28px;left:0;width:100%;height:30px;color:var(--panel)}
+footer .wrap{padding-top:44px;padding-bottom:calc(32px + env(safe-area-inset-bottom, 0px));display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer h2{margin:0;font-weight:900;font-variation-settings:"wdth" 112;font-size:clamp(2rem,4vw,3rem);color:var(--brand);letter-spacing:-.03em}
+footer .links{display:flex;gap:12px;flex-wrap:wrap}
+footer small{display:block;width:100%;color:var(--muted);font-family:var(--hand);font-size:1.25rem}
+
+/* teardowns */
+.tds{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px}
+.folder{position:relative;background:var(--paper);color:var(--on-paper);border:2px solid var(--edge);border-radius:4px 18px 18px 18px;box-shadow:7px 7px 0 var(--edge);padding:24px 22px 22px;display:flex;flex-direction:column;margin-top:22px}
+.folder::before{content:attr(data-tab);position:absolute;top:-30px;left:-2px;background:var(--c1);color:#16181D;border:2px solid var(--edge);border-bottom:0;border-radius:12px 12px 0 0;padding:3px 16px 4px;font-weight:800;font-size:.85rem}
+.folder:nth-child(1){transform:rotate(-1deg)}
+.folder:nth-child(3){transform:rotate(1deg)}
+.folder h3{font-size:1.35rem;line-height:1.2;margin:0 0 10px;font-weight:800}
+.folder .thesis{margin:0 0 14px;color:var(--muted-paper)}
+.folder .peek{background:var(--c2);border:2px solid var(--edge);border-radius:14px;padding:14px;margin:0 0 16px;font-size:.92rem}
+.peek .q{background:#fff;border:1.5px solid var(--edge);border-radius:12px 12px 12px 2px;padding:8px 10px;margin:0 0 8px;color:#16181D}
+.peek .a{background:#16181D;color:#F4F1E6;border-radius:12px 12px 2px 12px;padding:8px 10px;margin:0 0 0 18px}
+.peek .a u{text-decoration-color:#FFC727;text-decoration-thickness:2px}
+.folder .open{margin-top:auto;align-self:flex-start;font:inherit;font-weight:800;min-height:46px;padding:0 16px;border:2px solid var(--edge);background:var(--taxi);color:#16181D;box-shadow:4px 4px 0 var(--edge);cursor:pointer;border-radius:10px}
+.folder .open:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--edge)}
+.folder ul.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 16px}
+.folder ul.chips li{font-size:.78rem;font-weight:700;border:1.5px solid var(--edge);padding:2px 9px;background:#fff;color:#16181D}
+
+dialog.td{width:min(900px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:2px solid var(--edge);border-radius:20px;box-shadow:10px 10px 0 var(--edge);background:var(--paper);color:var(--on-paper)}
+dialog.td::backdrop{background:rgba(18,21,28,.55)}
+.td-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--c1);border-bottom:2px solid var(--edge);color:#16181D}
+.td-head p{margin:0;font-weight:800;min-width:0}
+.td-close{flex:none;font:inherit;font-weight:800;min-width:44px;min-height:44px;padding:0 14px;border:2px solid var(--edge);background:#fff;color:#16181D;border-radius:10px;cursor:pointer}
+.td-body{padding:clamp(20px,4vw,40px);overflow:auto}
+.td-body h2{font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 12px;font-weight:900;color:#1B3A9E}
+.td-body .sub{color:var(--muted-paper);margin:0 0 26px;font-size:1.08rem;max-width:44em}
+.td-body h3{font-size:1.25rem;margin:30px 0 8px;font-weight:800;display:flex;align-items:center;gap:10px}
+.td-body h3::before{content:"";width:14px;height:14px;background:var(--c1);border:2px solid var(--edge);transform:rotate(45deg);flex:none}
+.td-body p,.td-body li{max-width:46em}
+.td-body ul,.td-body ol{padding-left:22px}
+.td-body li{margin:0 0 8px}
+.td-body .good{background:#E8F7EE;border:2px solid var(--edge);border-radius:12px;padding:14px 18px}
+.td-body .note{font-family:var(--hand);font-size:1.4rem;color:#4B4F5A;margin:6px 0 0}
+.pipe{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr 22px 1fr;align-items:stretch;margin:14px 0 6px}
+.pipe .st{background:#fff;border:2px solid var(--edge);border-radius:10px;padding:10px 10px;font-size:.84rem;line-height:1.35;color:#16181D}
+.pipe .st b{display:block;font-size:.92rem}
+.pipe .ar{display:grid;place-items:center;font-weight:900}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.metrics div{border:2px solid var(--edge);border-radius:12px;padding:14px 16px;background:#fff;color:#16181D}
+.metrics div.ns{background:var(--c2);grid-column:1/-1}
+.metrics h4{margin:0 0 4px;font-size:1rem}
+.metrics p{margin:0;font-size:.95rem}
+.mock{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0}
+.ph{width:250px;background:#16181D;border-radius:30px;padding:12px;border:2px solid var(--edge);box-shadow:5px 5px 0 var(--edge)}
+.ph .sc{background:#F4F1E6;border-radius:20px;padding:14px 12px;min-height:330px;font-size:.84rem;color:#16181D;display:flex;flex-direction:column;gap:8px}
+.ph .bar{font-weight:800;font-size:.8rem;color:#4B4F5A;display:flex;justify-content:space-between}
+.ph .u{background:#fff;border:1.5px solid #16181D;border-radius:12px 12px 12px 2px;padding:8px 10px}
+.ph .g{background:#1B3A9E;color:#fff;border-radius:12px 12px 2px 12px;padding:8px 10px;margin-left:16px}
+.ph .chip{align-self:flex-start;border:1.5px solid #16181D;background:#FFC727;border-radius:999px;padding:4px 10px;font-weight:700;font-size:.78rem}
+.ph .low{background:#FFE07A;border-bottom:2px dashed #C2410C}
+.ph .ev{background:#fff;border:1.5px solid #16181D;border-radius:12px;padding:8px 10px}
+.ph .ev b{display:block}
+.ph .ev span{display:inline-block;margin:4px 6px 0 0;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 8px;background:#D3F2DF}
+.ph .ev span.t{background:#FFE07A}
+.ph .wa{background:#DCF8C6;border:1.5px solid #16181D;border-radius:12px;padding:10px}
+.ph .btnx{align-self:stretch;text-align:center;background:#1E9E62;color:#fff;border-radius:10px;padding:8px;font-weight:800}
+.src{font-size:.88rem;color:var(--muted-paper);border-top:2px dashed #b8b2a2;margin-top:30px;padding-top:14px}
+.src a{color:#1B3A9E}
+@media (max-width: 1020px){ .tds{grid-template-columns:1fr} .folder{transform:none!important} }
+@media (max-width: 600px){ .metrics{grid-template-columns:1fr} .pipe{display:flex;flex-direction:column} .pipe .ar{height:22px;transform:rotate(90deg)} dialog.td{max-height:100dvh;height:100dvh;width:100%;max-width:100%;margin:0;border-radius:0;box-shadow:none;border:0} }
+
+@media (max-width: 1020px){
+  .panel{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .tabs button{flex:none}
+  .stickers{min-height:0;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding-top:14px}
+  .stk{position:relative;top:auto!important;left:auto!important;right:auto!important}
+  .grid4{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 860px){
+  .stage{grid-template-columns:1fr;justify-items:center;margin-top:10px}
+  .receipt,.sticky{justify-self:center}
+  .phone-wrap{order:-1;width:min(360px,100%)}
+  .subtitle{position:static;display:block;text-align:center;margin-top:14px}
+  .tape.hi{left:50%;transform:translateX(-50%) rotate(-3deg);top:-20px;font-size:1.25rem;white-space:nowrap}
+  .imp{grid-template-columns:1fr}
+  .imp .art{border-right:0;border-bottom:2px solid var(--edge);min-height:220px}
+  .about{grid-template-columns:1fr}
+}
+@media (max-width: 540px){
+  .grid4{grid-template-columns:1fr}
+  .top .btn span.long{display:none}
+  .imp details{max-width:100%}
+  .badge{width:118px;height:118px;font-size:1.45rem;padding:0 30px 24px 0}
+  .imp .body{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top" aria-label="Rahul Yadav, back to top"><img src="data:image/jpeg;base64,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" alt="" width="52" height="52"></a>
+    <nav aria-label="Contact">
+      <a class="btn" href="https://linkedin.com/in/rahul-yadav-cs">LinkedIn</a>
+      <a class="btn y" href="mailto:rahulyadav9137288@gmail.com">Email <span class="long">me</span></a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap" style="position:relative">
+      <span class="tape hi">hi, you found my portfolio!</span>
+      <h1 class="name">RAHUL</h1>
+      <span class="subtitle">AI &amp; voice product manager</span>
+
+      <div class="stage">
+        <div class="receipt" aria-label="Receipt of results">
+          <h3>RECEIPT</h3>
+          <p class="c">Square Yards, Jun–Nov 2026</p>
+          <div class="row"><span>Weekly campaigns</span><b>5×</b></div>
+          <div class="row"><span>RMs activated</span><b>30</b></div>
+          <div class="row"><span>Leads recovered, 2 mo</span><b>1,000+</b></div>
+          <div class="row"><span>Deals closed</span><b>2</b></div>
+          <div class="row"><span>Referral hit rate</span><b>~3%</b></div>
+          <p class="tot">THANK YOU, COME AGAIN</p>
+        </div>
+
+        <div class="phone-wrap">
+          <svg class="splash" viewBox="0 0 400 400" aria-hidden="true"><path fill="currentColor" d="M64 210c-30-58 8-128 70-150 44-16 66 8 110-4 52-14 108 22 116 82 7 54-30 72-22 116 8 46-40 92-96 86-48-6-60 26-112 16-58-12-96-56-80-98 6-16 24-20 14-48z"/><circle cx="352" cy="70" r="14" fill="currentColor"/><circle cx="40" cy="330" r="10" fill="currentColor"/><circle cx="374" cy="300" r="7" fill="currentColor"/></svg>
+          <div class="phone" id="call">
+            <div class="screen">
+              <div class="notch" aria-hidden="true"></div>
+              <div class="callhead"><span class="live"><i aria-hidden="true"></i>AI agent calling</span><span id="lang-name">Hindi</span></div>
+              <p class="greet" id="greet" lang="hi">नमस्ते</p>
+              <p class="greet-sub" id="greet-sub">namaste</p>
+              <div class="wave" id="wave" aria-hidden="true"></div>
+              <div class="langs" id="langs" role="group" aria-label="Choose a language"></div>
+              <div class="callfoot"><p>~400K AI calls a day, in Indian languages</p><button class="pause" id="pause" type="button" aria-pressed="false">Pause</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sticky">
+          <p>right now:</p>
+          <ul>
+            <li>AI PM intern, Square Yards</li>
+            <li>IEEE first author</li>
+            <li>building Bambai</li>
+            <li>graduating May 2027</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="lead">Where I’ve been building. <span class="hand">(pick a tab)</span></p>
+      <div class="panel">
+        <div class="tabs" role="tablist" aria-label="Experience" id="tabs">
+          <button role="tab" id="t-sy" aria-controls="p-sy" aria-selected="true"><span class="mark" style="background:#1B3A9E">SY</span>Square Yards</button>
+          <button role="tab" id="t-obc" aria-controls="p-obc" aria-selected="false" tabindex="-1"><span class="mark" style="background:#C2410C">OH</span>OBC House</button>
+          <button role="tab" id="t-bam" aria-controls="p-bam" aria-selected="false" tabindex="-1"><span class="mark" style="background:#0F766E">B</span>Bambai</button>
+          <button role="tab" id="t-obk" aria-controls="p-obk" aria-selected="false" tabindex="-1"><span class="mark" style="background:#9D174D">OB</span>Om’s Book Club</button>
+          <button role="tab" id="t-ieee" aria-controls="p-ieee" aria-selected="false" tabindex="-1"><span class="mark" style="background:#16181D">IE</span>IEEE Research</button>
+        </div>
+
+        <div>
+          <div class="card" role="tabpanel" id="p-sy" aria-labelledby="t-sy">
+            <header><div><h3>Square Yards</h3><p class="role">AI Product Management Intern, AI Calling Hub</p></div><span class="where">India</span></header>
+            <span class="when">Jun 2026 – Present</span>
+            <p class="ctx">Gemini-powered AI voice platform making ~400K calls a day to buyers across Indian languages.</p>
+            <ul>
+              <li>Scaled weekly AI-calling campaigns <b>~100 → ~500 (5×)</b> by activating a 30-RM pilot cohort; every participating RM launched <b>14+ campaigns</b>.</li>
+              <li>Shipped Unknown Listener: <b>1,000+ leads in 2 months</b> recovered from missed inbound calls, and <b>2 closed deals</b>.</li>
+              <li>Owned and designed AI Mock Caller 0-to-1 with 3 cross-team partners; <b>live with a closed RM pilot</b>.</li>
+              <li>Launched referral capture with a VP, a solution architect and engineers: referrals in <b>~3% of call outcomes</b>.</li>
+              <li>Flagged <b>~1,600 of ~8,000</b> leads as low-intent and made the case for tracking RM Activation.</li>
+            </ul>
+          </div>
+          <div class="card" role="tabpanel" id="p-obc" aria-labelledby="t-obc" hidden>
+            <header><div><h3>OBC House</h3><p class="role">Founding Product Manager, author marketing agency</p></div></header>
+            <span class="when">May 2026 – Present</span>
+            <ul>
+              <li>Defined go-to-market, service architecture and pricing across <b>3 product lines</b>, with KPIs and repeatable delivery workflows.</li>
+              <li>Built a 0-to-1 acquisition pipeline that signed <b>3 clients</b> and <b>INR 2 lakh</b> in projected revenue.</li>
+            </ul>
+          </div>
+          <div class="card" role="tabpanel" id="p-bam" aria-labelledby="t-bam" hidden>
+            <header><div><h3>Bambai</h3><p class="role">Founder</p></div><span class="where">Mumbai</span></header>
+            <span class="when">Oct 2026 – Present</span>
+            <p class="ctx">A map-based social discovery platform for places, events and hangouts across Mumbai.</p>
+            <ul>
+              <li>Running as an <b>invite-only closed beta</b> with the first <b>20 users</b>, validating core discovery flows before opening access.</li>
+              <li>Designed and prototyped the full map experience hands-on with AI-assisted tools.</li>
+            </ul>
+          </div>
+          <div class="card" role="tabpanel" id="p-obk" aria-labelledby="t-obk" hidden>
+            <header><div><h3>Om’s Book Club</h3><p class="role">Co-founder &amp; Product Lead</p></div></header>
+            <span class="when">Feb 2026 – May 2026</span>
+            <ul>
+              <li>Grew an organic reading community from 1,500 to <b>2,000+ members (+33%)</b>.</li>
+              <li>A/B-tested content formats and tracked engagement against a single north-star metric.</li>
+            </ul>
+          </div>
+          <div class="card" role="tabpanel" id="p-ieee" aria-labelledby="t-ieee" hidden>
+            <header><div><h3>IEEE ICNTE 2026</h3><p class="role">First Author &amp; Presenter</p></div></header>
+            <span class="when">Jan 2026 – Mar 2026</span>
+            <p class="ctx">Scaling Artifacts in Language Embedding Post-Processing</p>
+            <ul>
+              <li>Identified and formally proved a measurement flaw that <b>inflates NLP evaluation scores</b>.</li>
+              <li>Designed a controlled testing framework across <b>3 benchmark datasets</b>, then presented it at the conference.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stickers" id="stickers" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="impact">
+    <div class="wrap">
+      <h2>Impact created</h2>
+      <p class="lead">Four things I shipped at Square Yards, with the story behind each.</p>
+      <div class="impact">
+
+        <article class="imp" style="--c1:#F5B800;--c2:#FFF0B3">
+          <span class="washi" aria-hidden="true"></span>
+          <div class="art">
+            <svg class="oldphone" viewBox="0 0 200 250" role="img" aria-label="Phone showing 1,000+ leads">
+              <rect x="30" y="10" width="140" height="230" rx="26" fill="#F5B800" stroke="#16181D" stroke-width="4"/>
+              <rect x="48" y="40" width="104" height="96" rx="10" fill="#FFFDF6" stroke="#16181D" stroke-width="4"/>
+              <text x="100" y="86" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="23" fill="#16181D">1,000+</text>
+              <text x="100" y="112" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="13" fill="#16181D">leads in 2 mo</text>
+              <g fill="#16181D"><circle cx="70" cy="162" r="9"/><circle cx="100" cy="162" r="9"/><circle cx="130" cy="162" r="9"/><circle cx="70" cy="190" r="9"/><circle cx="100" cy="190" r="9"/><circle cx="130" cy="190" r="9"/><circle cx="100" cy="218" r="9"/></g>
+              <rect x="86" y="22" width="28" height="6" rx="3" fill="#16181D"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Recovered 1,000+ leads in 2 months from calls nobody was answering</h3>
+            <p>Buyers were calling in, and the AI agent was silently missing them. Unknown Listener captures and qualifies those calls. Two have already become closed property deals.</p>
+            <ul class="tags"><li>Lead recovery</li><li>Call audits</li><li>Workflow design</li></ul>
+            <details>
+              <summary>Read the story</summary>
+              <div class="story">
+                <p><b>Problem.</b> Inbound calls the AI didn’t handle were lost, and someone calling a real estate company is about as warm as a lead gets.</p>
+                <p><b>What I did.</b> Found the gap through call audits and data analysis, then shipped a workflow to capture these calls and qualify the callers.</p>
+                <p><b>Result.</b> 1,000+ leads into the qualified pipeline in the first 2 months, and 2 closed deals so far.</p>
+              </div>
+            </details>
+            <div class="badge dark sm" aria-hidden="true">2 deals</div>
+          </div>
+        </article>
+
+        <article class="imp" style="--c1:#2F6FDE;--c2:#D6E6FF">
+          <span class="washi" aria-hidden="true"></span>
+          <div class="art">
+            <svg class="oldphone" viewBox="0 0 240 200" role="img" aria-label="Bar chart growing from 100 to 500 weekly campaigns">
+              <rect x="10" y="10" width="220" height="180" rx="16" fill="#FFFDF6" stroke="#16181D" stroke-width="4"/>
+              <g stroke="#16181D" stroke-width="3" fill="#2F6FDE">
+                <rect x="40" y="140" width="28" height="30"/><rect x="82" y="118" width="28" height="52"/><rect x="124" y="88" width="28" height="82"/><rect x="166" y="40" width="28" height="130"/>
+              </g>
+              <text x="54" y="132" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#16181D">~100</text>
+              <text x="180" y="32" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#16181D">~500</text>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Grew weekly AI-calling campaigns 5× by getting 30 RMs to actually use the Hub</h3>
+            <p>A new product only pays off once people rely on it. I owned activation for a 30-RM pilot cohort and cleared product bugs and adoption blockers one by one.</p>
+            <ul class="tags"><li>Adoption</li><li>Activation</li><li>User research</li></ul>
+            <details>
+              <summary>Read the story</summary>
+              <div class="story">
+                <p><b>Problem.</b> Campaign activity on the AI Calling Hub sat at around 100 a week.</p>
+                <p><b>What I did.</b> Worked with the RMs in the pilot cohort, fixing the product issues and adoption barriers that stopped them launching campaigns.</p>
+                <p><b>Result.</b> Weekly campaigns grew from ~100 to ~500, and every participating RM launched 14+ campaigns.</p>
+              </div>
+            </details>
+            <div class="badge" aria-hidden="true">5×</div>
+          </div>
+        </article>
+
+        <article class="imp" style="--c1:#1E9E62;--c2:#D3F2DF">
+          <span class="washi" aria-hidden="true"></span>
+          <div class="art">
+            <svg class="oldphone" viewBox="0 0 240 200" role="img" aria-label="Two chat bubbles, an AI customer and an RM">
+              <rect x="14" y="20" width="160" height="62" rx="18" fill="#FFFDF6" stroke="#16181D" stroke-width="4"/>
+              <path d="M40 82 l-10 22 l30 -22" fill="#FFFDF6" stroke="#16181D" stroke-width="4" stroke-linejoin="round"/>
+              <text x="94" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="15" fill="#16181D">“Is it near metro?”</text>
+              <rect x="66" y="110" width="160" height="62" rx="18" fill="#1E9E62" stroke="#16181D" stroke-width="4"/>
+              <path d="M200 172 l10 22 l-30 -22" fill="#1E9E62" stroke="#16181D" stroke-width="4" stroke-linejoin="round"/>
+              <text x="146" y="148" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="15" fill="#fff">RM practising</text>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Built AI Mock Caller 0-to-1: AI plays the customer so RMs can practise</h3>
+            <p>I wrote the PRD and designed the experience end-to-end, prototyping it myself with AI tools, then built and tested it with 3 cross-team partners.</p>
+            <ul class="tags"><li>0-to-1</li><li>LLM product</li><li>Prototyping</li></ul>
+            <details>
+              <summary>Read the story</summary>
+              <div class="story">
+                <p><b>Problem.</b> RMs learn customer conversations on real customers, where a weak call costs a lead.</p>
+                <p><b>What I did.</b> Owned the PRD and design, then coordinated build, scenario testing and rollout across teams.</p>
+                <p><b>Result.</b> Live with a closed pilot cohort of RMs, who rehearse against AI customer personas before real calls.</p>
+              </div>
+            </details>
+            <div class="badge" aria-hidden="true">Live</div>
+          </div>
+        </article>
+
+        <article class="imp" style="--c1:#D6337A;--c2:#FFD9E8">
+          <span class="washi" aria-hidden="true"></span>
+          <div class="art">
+            <svg class="oldphone" viewBox="0 0 240 200" role="img" aria-label="A no turning into a referral">
+              <rect x="20" y="40" width="80" height="80" rx="40" fill="#FFFDF6" stroke="#16181D" stroke-width="4"/>
+              <text x="60" y="88" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="22" fill="#16181D">no</text>
+              <path d="M108 80 C 140 40, 160 40, 176 70" fill="none" stroke="#16181D" stroke-width="4" stroke-linecap="round"/>
+              <path d="M166 62 l12 10 l2 -16" fill="none" stroke="#16181D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="140" y="80" width="80" height="80" rx="40" fill="#D6337A" stroke="#16181D" stroke-width="4"/>
+              <text x="180" y="126" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="15" fill="#fff">referral</text>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Turned “not interested” calls into referrals in ~3% of call outcomes</h3>
+            <p>Prospects who weren’t buying themselves often knew someone who was. I partnered with a VP, a solution architect and engineers to add a referral-capture step.</p>
+            <ul class="tags"><li>Discovery</li><li>Funnel</li><li>Stakeholders</li></ul>
+            <details>
+              <summary>Read the story</summary>
+              <div class="story">
+                <p><b>Problem.</b> Calls ending in “not interested” were closed out with nothing captured.</p>
+                <p><b>What I did.</b> Spotted the untapped referral demand and launched a referral-capture workflow in the call flow.</p>
+                <p><b>Result.</b> Early data showed referral opportunities in about 3% of calling outcomes, from calls that previously produced nothing.</p>
+              </div>
+            </details>
+            <div class="badge" aria-hidden="true">~3%</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="teardowns">
+    <div class="wrap">
+      <h2>Product teardowns</h2>
+      <p class="lead">Three Google products, looked at through problems I’ve actually worked on. <span class="hand">(open any file)</span></p>
+      <div class="tds">
+
+        <article class="folder" data-tab="Gemini Live" style="--c1:#9DB4FF;--c2:#E6ECFF">
+          <h3>Gemini Live speaks 9 Indian languages. Does it speak the way India talks?</h3>
+          <p class="thesis">Language support is a checkbox. Mid-sentence switching, dialects and turn-taking are where voice AI actually breaks.</p>
+          <div class="peek">
+            <p class="q">“Mala Dadar madhe best misal kuthe milel, jo abhi open ho?”</p>
+            <p class="a">Marathi, Hindi and English in one sentence. Which language is “set”?</p>
+          </div>
+          <ul class="chips"><li>Voice AI</li><li>Code-switching</li><li>Evaluation</li></ul>
+          <button class="open" type="button" data-open="td-gemini">Read the teardown</button>
+        </article>
+
+        <article class="folder" data-tab="Google Maps" style="--c1:#7EE2A8;--c2:#D3F2DF">
+          <h3>Maps knows 35 million places in India. It doesn’t know what’s happening tonight.</h3>
+          <p class="thesis">City plans are time-bound: gigs, pop-ups, screenings. That information lives on posters and Instagram, not in place profiles.</p>
+          <div class="peek">
+            <p class="q">“Kuch interesting tonight in Bandra under ₹500?”</p>
+            <p class="a">My hypothesis: you get cafés, not the open mic starting at <u>8:30 PM</u>.</p>
+          </div>
+          <ul class="chips"><li>Local discovery</li><li>Multimodal AI</li><li>Ranking</li></ul>
+          <button class="open" type="button" data-open="td-maps">Read the teardown</button>
+        </article>
+
+        <article class="folder" data-tab="Business Profile" style="--c1:#FFB4D0;--c2:#FFD9E8">
+          <h3>Google’s AI calls shops for users. India’s problem is the shop that never picks up.</h3>
+          <p class="thesis">I recovered 1,000+ leads in 2 months from missed inbound calls at Square Yards. The same leak exists in every Maps-listed shop.</p>
+          <div class="peek">
+            <p class="q">Missed call from a customer, 6:12 PM</p>
+            <p class="a">Answered in Hindi, order noted, owner sent a callback card.</p>
+          </div>
+          <ul class="chips"><li>Voice agents</li><li>SMBs</li><li>Grounding</li></ul>
+          <button class="open" type="button" data-open="td-gbp">Read the teardown</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="td" id="td-gemini" aria-labelledby="td-gemini-t" style="--c1:#9DB4FF;--c2:#E6ECFF">
+    <div class="td-head"><p>Teardown: Gemini Live in Indian languages</p><button class="td-close" type="button" aria-label="Close teardown">Close</button></div>
+    <div class="td-body">
+      <h2 id="td-gemini-t">Gemini Live speaks 9 Indian languages. Does it speak the way India talks?</h2>
+      <p class="sub">I work on a voice platform that makes ~400K AI calls a day to buyers across India, and my research is about metrics that look good while hiding failure. This teardown sits right where those two meet.</p>
+
+      <h3>What Google got right</h3>
+      <div class="good"><p>Gemini Live supports Hindi plus Bengali, Gujarati, Kannada, Malayalam, Marathi, Tamil, Telugu and Urdu, and it’s free on Android. On India’s largest real-world speech benchmark, Voice of India, Gemini models performed close to India-built systems while several global models lagged far behind. The foundation is strong.</p></div>
+
+      <h3>The gap: India doesn’t speak one language per conversation</h3>
+      <ol>
+        <li><strong>Code-switching.</strong> Gemini Live follows the language you set, and Google’s rollout allowed up to two languages on a device. A Mumbai user moves between Marathi, Hindi and English in a single sentence, and a family phone may be shared across three languages.</li>
+        <li><strong>Averages hide the users who get left out.</strong> On Voice of India, error rates sit around 5–6% for Hindi and Bengali but 15–20% for Tamil, Telugu and Malayalam. Dialects like Bhojpuri hit 20–30%, against under 10% for standard Hindi. “Supports Hindi” can mean very different things to someone in Mumbai and someone in North Bihar.</li>
+        <li><strong>Turn-taking breaks first.</strong> In AI calling, I analyse connect, latency and drop-off funnels. When the agent is unsure, it hesitates; the user talks over it; overlapping audio makes recognition worse. One misheard place name turns into three wasted turns.</li>
+      </ol>
+
+      <h3>Who this hurts most</h3>
+      <p>First-time voice AI users outside metro Hindi and English. They’re exactly the people for whom voice is easier than typing, and one bad conversation can be enough to make them give up.</p>
+
+      <h3>My proposal: “Speak naturally” mode</h3>
+      <ul>
+        <li><strong>Segment-level language detection.</strong> Detect language per phrase rather than per user, so one turn can mix any supported Indian language with English. The setting becomes a hint, not a wall.</li>
+        <li><strong>Confidence-gated repair.</strong> When confidence on a key entity (a place, a name, a number) is low, Gemini asks one short confirmation in the user’s dominant language instead of guessing. Live captions underline the low-confidence word so the user can tap and fix it.</li>
+        <li><strong>Ship gates per dialect cluster.</strong> Internally, a language only counts as “launched” when its worst dialect cluster passes the bar, not the average.</li>
+      </ul>
+      <div class="mock">
+        <div class="ph"><div class="sc">
+          <div class="bar"><span>Gemini Live</span><span>Marathi + Hindi + English</span></div>
+          <div class="u">Mala <span class="low">Dadar</span> madhe best misal kuthe milel, jo abhi open ho?</div>
+          <div class="chip">Tap to fix “Dadar”</div>
+          <div class="g">Dadar West ki Dadar East? Doghanmadhe ata ughadi aahet.</div>
+          <div class="u">West.</div>
+          <div class="g">Dadar West madhe 3 jaga ata ughadya aahet. Sagla javal…</div>
+        </div></div>
+      </div>
+      <p class="note">one short question beats three wrong answers</p>
+
+      <h3>How it works under the hood</h3>
+      <p>Whether Live runs a cascaded pipeline or a native audio model, the same decisions exist. The proposal changes three of them.</p>
+      <div class="pipe" role="list">
+        <div class="st" role="listitem"><b>Streaming audio</b>with endpointing tuned for code-switched pauses</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Per-segment language ID</b>replaces a single user setting</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Recognition + entity confidence</b>scores places, names, numbers</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Policy</b>answer, confirm, or ask</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Speech out</b>in the user’s dominant language</div>
+      </div>
+      <p>Evaluation would use orthographically informed WER (OI-WER), which accepts valid spelling variants so code-mixed speech isn’t penalised just for spelling, sliced by language, dialect cluster and audio quality.</p>
+
+      <h3>Metrics</h3>
+      <div class="metrics">
+        <div class="ns"><h4>North star</h4><p>Successful non-English Live conversations per weekly user: the user got what they asked for without repeating themselves.</p></div>
+        <div><h4>Quality gap</h4><p>Error rate of the worst dialect cluster minus standard Hindi. The goal is shrinking the gap, not the average.</p></div>
+        <div><h4>Repair cost</h4><p>Confirmation questions per conversation. Too many and the fix becomes the annoyance.</p></div>
+        <div><h4>Talk-over rate</h4><p>Turns where the user interrupts the agent, a direct signal of latency and hesitation.</p></div>
+        <div><h4>Early abandon</h4><p>Sessions ended in the first 30 seconds, split by language.</p></div>
+      </div>
+
+      <h3>Trade-offs I’d accept, and ones I wouldn’t</h3>
+      <ul>
+        <li>A confirmation adds a turn and some latency. Worth it for entities that change the answer (places, numbers), not for small talk.</li>
+        <li>Per-segment language detection can flip-flop on short words. I’d smooth it across a few seconds and bias towards the user’s recent languages.</li>
+        <li>I wouldn’t collect extra dialect audio without clear consent. Evaluation can rely on consented benchmark data like Voice of India.</li>
+      </ul>
+
+      <h3>How I’d validate it in 2 weeks</h3>
+      <p>Run 30 Live sessions with 10 people who naturally mix Marathi, Hindi and English. Log every failure by type (misrecognised entity, wrong language, talk-over), then compare against single-language sessions. If code-switched sessions fail far more often, the problem is real and measurable.</p>
+
+      <div class="src"><strong>Sources:</strong>
+        <a href="https://beebom.com/gemini-live-supports-indian-languages">Gemini Live in 9 Indian languages (Beebom)</a>;
+        <a href="https://www.neowin.net/news/google-expands-gemini-live-support-to-more-than-40-languages/">two languages per device (Neowin)</a>;
+        <a href="https://www.exchange4media.com/digital-news/is-indias-language-challenge-exposing-the-next-big-gap-in-ai-advertising-153061.html">Voice of India error rates (exchange4media)</a>;
+        <a href="https://themainstream.co.in/?p=112036">Gemini close to India-built systems (The Mainstream)</a>;
+        <a href="https://arxiv.org/pdf/2604.19151">Voice of India paper (arXiv)</a>.
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="td" id="td-maps" aria-labelledby="td-maps-t" style="--c1:#7EE2A8;--c2:#D3F2DF">
+    <div class="td-head"><p>Teardown: Google Maps for “what’s on tonight”</p><button class="td-close" type="button" aria-label="Close teardown">Close</button></div>
+    <div class="td-body">
+      <h2 id="td-maps-t">Maps knows 35 million places in India. It doesn’t know what’s happening tonight.</h2>
+      <p class="sub">I’m building Bambai, a map for finding places, events and hangouts in Mumbai. That work made one gap in Google Maps obvious to me.</p>
+
+      <h3>What Google got right</h3>
+      <div class="good"><p>Ask Maps launched in March 2026 in the US and India. It answers conversational questions about places, like finding spots with good veg appetizers where you can watch today’s match, and it’s grounded in Google’s data on 35 million places in India. For “where should I go?”, it’s already excellent.</p></div>
+
+      <h3>The gap: places are permanent, plans are not</h3>
+      <p>A lot of what people actually plan around is time-bound: an open mic at 8:30, a weekend flea market, a match screening, a pop-up. That information mostly lives in Instagram posts, printed posters and WhatsApp forwards. Maps’ index is built around places, so a place profile can say a café exists, but not that something worth going to starts there in two hours.</p>
+      <p class="note">hypothesis: try asking Ask Maps “what’s on tonight in Bandra” and see what comes back</p>
+
+      <h3>Who this hurts most</h3>
+      <p>Young people in big Indian cities deciding what to do in the next few hours, and small venues and organisers who have no budget for promotion beyond a poster and an Instagram post.</p>
+
+      <h3>My proposal: “Happening” as a first-class object</h3>
+      <ul>
+        <li><strong>Events become time-bound entities attached to a place</strong>, with a start time, end time, price and language, and they expire automatically.</li>
+        <li><strong>Three ways in:</strong> owners post them from Business Profile; users point Lens at a poster and contribute it in one tap; ticketing partners send structured feeds.</li>
+        <li><strong>Ask Maps gets a time dimension</strong>: “tonight”, “this weekend” and “in the next 2 hours” become real filters, and answers show when something starts and how sure Maps is.</li>
+      </ul>
+      <div class="mock">
+        <div class="ph"><div class="sc">
+          <div class="bar"><span>Ask Maps</span><span>Bandra West</span></div>
+          <div class="u">Kuch interesting tonight in Bandra under ₹500?</div>
+          <div class="ev"><b>Open mic night</b>Café on Chapel Road<br><span class="t">Starts 8:30 PM</span><span>Owner-verified</span></div>
+          <div class="ev"><b>Indie film screening</b>Community hall, Pali Hill<br><span class="t">Starts 9 PM</span><span>Seen on 3 posters</span></div>
+          <div class="ev"><b>Night food market</b>Carter Road<br><span class="t">Ends in 2 hrs</span><span>Free entry</span></div>
+        </div></div>
+      </div>
+      <p class="note">illustrative mockup, not real listings</p>
+
+      <h3>How it works under the hood</h3>
+      <div class="pipe" role="list">
+        <div class="st" role="listitem"><b>Ingest</b>Profile posts, Lens poster scans, partner feeds</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Extract</b>multimodal model fills a schema: title, date, time, venue, price</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Resolve</b>match venue text to a place ID by location, name and phone</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Dedupe + trust</b>cluster copies, score by source and corroboration</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Rank + expire</b>time-to-start, distance, trust; removed at end time</div>
+      </div>
+      <p>The hard parts are the unglamorous ones. Indian posters mix scripts and write dates as DD/MM, so extraction needs per-field confidence and a hold rule for ambiguous dates. Deduplication clusters by place ID, time window and title similarity so five posters for one gig become one listing. Expiry is the safety net: a stale event is worse than no event.</p>
+
+      <h3>Metrics</h3>
+      <div class="metrics">
+        <div class="ns"><h4>North star</h4><p>Plans made: navigations to an event’s place that start within the event’s time window after an Ask Maps answer.</p></div>
+        <div><h4>Stale-event rate</h4><p>Users who arrive and report nothing was there. The single biggest trust risk.</p></div>
+        <div><h4>Date precision</h4><p>Share of extracted events with the correct date and time, by script and language.</p></div>
+        <div><h4>Duplicate rate</h4><p>Same event shown more than once in an answer.</p></div>
+        <div><h4>Coverage</h4><p>Share of “tonight”-type questions that return at least one trusted event.</p></div>
+      </div>
+
+      <h3>Trade-offs</h3>
+      <ul>
+        <li><strong>Freshness against trust.</strong> Crowd-scanned posters are fast but unverified. I’d show them with a clear “seen on posters” label and rank owner-verified events higher.</li>
+        <li><strong>Cold start outside metros.</strong> Tier-2 cities have fewer posts. Lens scans by users matter most there, so I’d launch in 2–3 metros and measure contribution rates before expanding.</li>
+        <li><strong>Monetisation can wait.</strong> Promoted events are an obvious ad slot, but mixing paid and organic before trust is earned would undermine the feature.</li>
+      </ul>
+
+      <h3>How I’d validate it in 2 weeks</h3>
+      <p>Use Bambai’s 20-user closed beta: log every search and tag it as place-based or time-based. Then photograph 50 event posters around Bandra and Dadar and check how many of those events are findable on Maps today. If a large share of real plans are time-based and missing, the gap is proven.</p>
+
+      <div class="src"><strong>Sources:</strong>
+        <a href="https://us.smartprix.com/bytes/google-maps-adds-ask-maps-ai-assistant-and-3d-immersive-navigation">Ask Maps launch in US and India (Smartprix)</a>;
+        <a href="https://www.mobigyaan.com/?p=214133">Ask Maps discovery example (Mobigyaan)</a>;
+        <a href="https://blog.google/intl/en-in/products/explore-communicate/google-maps-in-india-supercharged-with-gemini/">35 million places in India (Google India blog)</a>.
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="td" id="td-gbp" aria-labelledby="td-gbp-t" style="--c1:#FFB4D0;--c2:#FFD9E8">
+    <div class="td-head"><p>Teardown: Business Profile and the missed call</p><button class="td-close" type="button" aria-label="Close teardown">Close</button></div>
+    <div class="td-body">
+      <h2 id="td-gbp-t">Google’s AI calls shops for users. India’s problem is the shop that never picks up.</h2>
+      <p class="sub">At Square Yards I shipped Unknown Listener, which caught inbound calls our AI agent was silently missing. It added 1,000+ leads to the pipeline in 2 months and 2 closed deals. Missed calls are lost customers, and that lesson applies far beyond real estate.</p>
+
+      <h3>What Google got right</h3>
+      <div class="good"><p>Ask for Me lets Google’s AI call local businesses on a user’s behalf to check prices and availability, then send back a summary. Every call announces that it’s automated, businesses can opt out from their Business Profile, and call quotas stop shops getting flooded. It started with nail salons and auto shops in the US, and reports from Google I/O 2026 say it’s expanding to home repair. It’s a careful, well-designed rollout.</p></div>
+
+      <h3>The gap: in India, the bottleneck is the other end of the phone</h3>
+      <p>Ask for Me solves “I don’t want to make the call.” In India, a huge amount of local commerce already happens by phone: customers find a shop on Maps and tap call. The weak point is the shop: one person at the counter, a busy evening rush, a phone in a drawer. Every unanswered call is a customer who quietly goes to the next listing. Ask for Me is also US-only and English-only today, while these calls happen in Hindi, Marathi, Tamil and more.</p>
+      <p class="note">at Square Yards, the leads hiding in missed calls were real buyers</p>
+
+      <h3>Who this hurts most</h3>
+      <p>Small shop owners who can’t afford a receptionist, and customers who give up after one unanswered call.</p>
+
+      <h3>My proposal: a missed-call assistant in Business Profile</h3>
+      <ul>
+        <li><strong>One-tap setup.</strong> The owner turns on forwarding for busy and unanswered calls from the Business Profile app, which walks them through their phone’s standard call-forwarding setting.</li>
+        <li><strong>Gemini answers in the caller’s language</strong>, using only what’s in the profile: hours, address, listed prices and products. Anything else gets “The owner will call you back.”</li>
+        <li><strong>The owner gets a callback card</strong> with the caller’s name, what they wanted, their language and urgency, plus a one-tap call-back button.</li>
+      </ul>
+      <div class="mock">
+        <div class="ph"><div class="sc">
+          <div class="bar"><span>Caller</span><span>6:12 PM</span></div>
+          <div class="g">Namaste, Sharma Sweets ki taraf se Google assistant baat kar raha hai. Dukaan abhi busy hai. Main kaise madad karun?</div>
+          <div class="u">Kaju katli 2 kilo chahiye, 7 baje tak mil jayega?</div>
+          <div class="g">Shop raat 9 baje tak khula hai. Order confirm karne ke liye owner aapko 15 minute mein call karenge.</div>
+        </div></div>
+        <div class="ph"><div class="sc">
+          <div class="bar"><span>Owner</span><span>Business Profile</span></div>
+          <div class="wa"><strong>Missed call handled</strong><br>Customer wants 2 kg kaju katli, pickup by 7 PM.<br>Spoke Hindi. Asked about stock, not price.</div>
+          <div class="btnx">Call back</div>
+          <div class="chip">Add kaju katli price to profile?</div>
+        </div></div>
+      </div>
+      <p class="note">illustrative mockup; the shop is made up</p>
+
+      <h3>How it works under the hood</h3>
+      <div class="pipe" role="list">
+        <div class="st" role="listitem"><b>Conditional forwarding</b>busy or no answer goes to a Google number</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Real-time voice agent</b>detects language, discloses it’s AI</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Grounding</b>answers only from profile fields and owner FAQs</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Lead card</b>need, language, urgency, callback time</div><span class="ar" aria-hidden="true">→</span>
+        <div class="st" role="listitem"><b>Learning loop</b>repeated questions suggest profile fields to fill</div>
+      </div>
+      <p>The most important design choice is the grounding rule. A voice agent that invents a price or promises stock can cost the owner money, so any answer not backed by a profile field becomes a callback, never a guess. The learning loop turns the most common unanswered question into a prompt for the owner to add that information, which also makes the listing better for Search and Ask for Me.</p>
+
+      <h3>Metrics</h3>
+      <div class="metrics">
+        <div class="ns"><h4>North star</h4><p>Missed calls recovered: forwarded calls that end in an owner callback, order or visit.</p></div>
+        <div><h4>Ungrounded-answer rate</h4><p>Answers not backed by a profile field. Target: zero, audited weekly.</p></div>
+        <div><h4>Early hang-up</h4><p>Callers who hang up within 10 seconds of hearing the AI greeting, by language.</p></div>
+        <div><h4>Callback speed</h4><p>Time from lead card to owner call-back.</p></div>
+        <div><h4>Owner retention</h4><p>Owners who keep forwarding on after 30 days, and opt-out reasons.</p></div>
+      </div>
+
+      <h3>Trade-offs</h3>
+      <ul>
+        <li><strong>Caller trust.</strong> Some callers will hang up on any AI. Disclosure stays non-negotiable; I’d test greeting scripts per language to reduce hang-ups.</li>
+        <li><strong>Setup friction.</strong> Call forwarding is unfamiliar to many owners, so guided setup and a test call matter more than the AI itself.</li>
+        <li><strong>Cost per call.</strong> I’d start with high-intent categories (food, repairs, healthcare clinics) where one recovered customer clearly pays for many calls.</li>
+      </ul>
+
+      <h3>How I’d validate it in 2 weeks</h3>
+      <p>Call 30 Maps-listed shops near me during evening peak and record how many pick up. Then interview 5 owners about how often they miss calls and what they lose. If the answer rate is low and owners can name lost orders, the problem is real before a single line of code.</p>
+
+      <div class="src"><strong>Sources:</strong>
+        <a href="https://androidauthority.com/google-search-ask-for-me-3521795">Ask for Me in Search Labs (Android Authority)</a>;
+        <a href="https://techcrunch.com/?p=2956771">nail salons and auto shops (TechCrunch)</a>;
+        <a href="https://rss.boorghani.com/?p=277384">disclosure, opt-out and quotas (via The Verge)</a>;
+        <a href="https://jobnimbus.com/blog/google-ai-calling-home-services">home repair expansion (JobNimbus)</a>.
+      </div>
+    </div>
+  </dialog>
+
+  <section class="sec" id="more">
+    <div class="wrap">
+      <h2>More work</h2>
+      <p class="lead">Research, analysis and earlier builds.</p>
+      <div class="grid4">
+        <article class="mini">
+          <div class="pic" style="background:#E6ECFF"><svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true"><line x1="10" y1="90" x2="110" y2="90" stroke="#16181D" stroke-width="3"/><rect x="24" y="50" width="26" height="40" fill="#FFFDF6" stroke="#16181D" stroke-width="3"/><rect x="70" y="14" width="26" height="76" fill="#FFC727" stroke="#16181D" stroke-width="3"/><line x1="64" y1="50" x2="102" y2="50" stroke="#16181D" stroke-width="3" stroke-dasharray="5 4"/></svg></div>
+          <div class="txt"><h3>IEEE paper: when a score rises but the model doesn’t improve</h3><p>First author and presenter at ICNTE 2026; tested across 3 benchmark datasets.</p><a href="https://scholar.google.com/scholar?q=%22Scaling+Artifacts+in+Language+Embedding+Post-Processing%22">Find it on Google Scholar</a></div>
+        </article>
+        <article class="mini">
+          <div class="pic" style="background:#FFF0B3"><svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true"><circle cx="60" cy="50" r="38" fill="#FFFDF6" stroke="#16181D" stroke-width="3"/><path d="M60 50 L60 12 A38 38 0 0 1 96 62 Z" fill="#F5B800" stroke="#16181D" stroke-width="3"/></svg></div>
+          <div class="txt"><h3>Questioning the north star</h3><p>~1,600 of ~8,000 leads were low-intent, so Qualification Rate alone misjudged RMs. I made the case for tracking RM Activation.</p></div>
+        </article>
+        <article class="mini">
+          <div class="pic" style="background:#D3F2DF"><svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true"><rect x="20" y="16" width="56" height="70" rx="4" fill="#FFFDF6" stroke="#16181D" stroke-width="3"/><line x1="30" y1="34" x2="66" y2="34" stroke="#16181D" stroke-width="3"/><line x1="30" y1="46" x2="66" y2="46" stroke="#16181D" stroke-width="3"/><line x1="30" y1="58" x2="56" y2="58" stroke="#16181D" stroke-width="3"/><circle cx="82" cy="62" r="16" fill="#1E9E62" stroke="#16181D" stroke-width="3"/><line x1="94" y1="74" x2="106" y2="86" stroke="#16181D" stroke-width="5" stroke-linecap="round"/></svg></div>
+          <div class="txt"><h3>RAG research assistant</h3><p>Problem first: 2+ hours lost per literature review. Built the full retrieval pipeline and tested it with 5 real users. 2024.</p></div>
+        </article>
+        <article class="mini">
+          <div class="pic" style="background:#FFD9E8"><svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true"><rect x="14" y="18" width="92" height="64" rx="8" fill="#FFFDF6" stroke="#16181D" stroke-width="3"/><polyline points="24,66 44,50 60,58 80,34 96,42" fill="none" stroke="#D6337A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+          <div class="txt"><h3>AutoML Analytics Hub</h3><p>Self-serve ML for non-technical users, built after research found a 3–5 hour weekly gap from data-team dependency. 2025.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About me</h2>
+        <div class="card">
+          <p>I’m a final-year computer science student in Mumbai and a Product Management intern on Square Yards’ AI calling platform.</p>
+          <p>Most of my best work started by noticing something small: a call nobody answered, a “no” that could have been a referral, a metric that looked healthy for the wrong reason.</p>
+          <p>I’m looking for an Associate Product Manager role starting in 2027.</p>
+        </div>
+      </div>
+      <div class="sticky" style="justify-self:center;margin-top:56px;transform:rotate(-3deg);width:min(320px,100%)">
+        <dl class="facts" style="font-family:var(--sans);font-size:1rem">
+          <dt>Degree</dt><dd>B.E. Computer Science, University of Mumbai</dd>
+          <dt>Graduating</dt><dd>May 2027</dd>
+          <dt>CGPA</dt><dd>8.44 / 10</dd>
+          <dt>Tools</dt><dd>SQL, MongoDB, Python, Mixpanel, Figma, Jira, n8n</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="waves" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 30 V14 Q 50 0 100 14 T 200 14 T 300 14 T 400 14 T 500 14 T 600 14 T 700 14 T 800 14 T 900 14 T 1000 14 T 1100 14 T 1200 14 V30 Z"/></svg>
+  <div class="wrap">
+    <h2>Let’s talk.</h2>
+    <div class="links">
+      <a class="btn y" href="mailto:rahulyadav9137288@gmail.com">rahulyadav9137288@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/rahul-yadav-cs">LinkedIn</a>
+      <a class="btn" href="https://github.com/iseerahul">GitHub</a>
+    </div>
+    <small>Rahul Yadav, Mumbai, made with curiosity and a lot of chai</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var langs=[
+    {n:"Hindi",t:"नमस्ते",s:"namaste",l:"hi"},{n:"Marathi",t:"नमस्कार",s:"namaskar",l:"mr"},
+    {n:"Tamil",t:"வணக்கம்",s:"vanakkam",l:"ta"},{n:"Telugu",t:"నమస్కారం",s:"namaskaram",l:"te"},
+    {n:"Bengali",t:"নমস্কার",s:"nomoskar",l:"bn"},{n:"Kannada",t:"ನಮಸ್ಕಾರ",s:"namaskara",l:"kn"},
+    {n:"Gujarati",t:"નમસ્તે",s:"namaste",l:"gu"},{n:"Malayalam",t:"നമസ്കാരം",s:"namaskaram",l:"ml"},
+    {n:"Punjabi",t:"ਸਤ ਸ੍ਰੀ ਅਕਾਲ",s:"sat sri akal",l:"pa"},{n:"English",t:"Hello",s:"hello",l:"en"}
+  ];
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var call=document.getElementById("call"),g=document.getElementById("greet"),gs=document.getElementById("greet-sub"),ln=document.getElementById("lang-name"),wrap=document.getElementById("langs"),wave=document.getElementById("wave"),pb=document.getElementById("pause");
+  var bars=[];
+  for(var i=0;i<28;i++){var b=document.createElement("span");b.style.animationDuration=(0.45+Math.random()*0.7).toFixed(2)+"s";b.style.animationDelay=(-Math.random()).toFixed(2)+"s";wave.appendChild(b);bars.push(b);}
+  function shape(){bars.forEach(function(b,i){var c=Math.sin((i/bars.length)*Math.PI);b.style.setProperty("--h",(0.3+c*0.65*Math.random()+0.05).toFixed(2));});}
+  var btns=langs.map(function(x,i){var b=document.createElement("button");b.type="button";b.textContent=x.n;b.setAttribute("aria-pressed",i===0?"true":"false");b.addEventListener("click",function(){show(i);setPaused(true);});wrap.appendChild(b);return b;});
+  var cur=0,timer=null,paused=reduce;
+  function show(i){cur=i;var x=langs[i];g.textContent=x.t;g.setAttribute("lang",x.l);gs.textContent=x.s;ln.textContent=x.n;btns.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false");});shape();}
+  function setPaused(p){paused=p;call.classList.toggle("paused",p);pb.textContent=p?"Play":"Pause";pb.setAttribute("aria-pressed",p?"true":"false");clearInterval(timer);if(!p){timer=setInterval(function(){show((cur+1)%langs.length);},2200);}}
+  pb.addEventListener("click",function(){setPaused(!paused);});
+  show(0);setPaused(paused);
+
+  var stickers={
+    "p-sy":[["5×","weekly campaigns, ~100 → ~500"],["1,000+","leads recovered in 2 months"],["~400K","AI calls a day, platform-wide"]],
+    "p-obc":[["3","product lines priced and launched"],["3","clients signed"],["₹2L","projected revenue"]],
+    "p-bam":[["20","users in the closed beta"],["0→1","designed and prototyped myself"],["Oct ’26","started"]],
+    "p-obk":[["2,000+","members"],["+33%","organic growth"],["A/B","tested content formats"]],
+    "p-ieee":[["1st","author"],["3","benchmark datasets"],["IEEE","presented at ICNTE 2026"]]
+  };
+  var st=document.getElementById("stickers");
+  function paint(id){st.innerHTML="";stickers[id].forEach(function(s){var d=document.createElement("div");d.className="stk";var a=document.createElement("strong");a.textContent=s[0];var b=document.createElement("span");b.textContent=s[1];d.appendChild(a);d.appendChild(b);st.appendChild(d);});}
+  var tabs=[].slice.call(document.querySelectorAll('#tabs [role="tab"]'));
+  function select(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});paint(t.getAttribute("aria-controls"));if(focus)t.focus();}
+  tabs.forEach(function(t,i){
+    t.addEventListener("click",function(){select(t,false);});
+    t.addEventListener("keydown",function(e){var k=e.key,n=null;if(k==="ArrowDown"||k==="ArrowRight")n=tabs[(i+1)%tabs.length];if(k==="ArrowUp"||k==="ArrowLeft")n=tabs[(i-1+tabs.length)%tabs.length];if(n){e.preventDefault();select(n,true);}});
+  });
+  paint("p-sy");
+  document.querySelectorAll("[data-open]").forEach(function(b){b.addEventListener("click",function(){var d=document.getElementById(b.getAttribute("data-open"));if(d&&d.showModal){d.showModal();d.querySelector(".td-body").scrollTop=0;}});});
+  document.querySelectorAll("dialog.td").forEach(function(d){d.querySelector(".td-close").addEventListener("click",function(){d.close();});d.addEventListener("click",function(e){if(e.target===d)d.close();});});
+})();
+</script>
+</body>
+</html>
